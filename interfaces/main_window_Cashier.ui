@@ -7,7 +7,7 @@
     <x>0</x>
     <y>0</y>
     <width>1081</width>
-    <height>684</height>
+    <height>728</height>
    </rect>
   </property>
   <property name="windowTitle">
@@ -20,60 +20,58 @@
       <x>10</x>
       <y>20</y>
       <width>1061</width>
-      <height>632</height>
+      <height>644</height>
      </rect>
     </property>
     <layout class="QGridLayout" name="gridLayout">
-     <item row="3" column="0">
-      <widget class="QDateEdit" name="dateEdit"/>
+     <item row="2" column="0">
+      <widget class="QLineEdit" name="search_l">
+       <property name="maximumSize">
+        <size>
+         <width>400</width>
+         <height>16777215</height>
+        </size>
+       </property>
+      </widget>
      </item>
-     <item row="1" column="2" rowspan="6">
-      <layout class="QVBoxLayout" name="verticalLayout">
-       <item>
-        <widget class="QLabel" name="session_name">
-         <property name="font">
-          <font>
-           <family>Nirmala UI</family>
-           <pointsize>12</pointsize>
-          </font>
-         </property>
-         <property name="text">
-          <string>Выберите сеанс</string>
-         </property>
-        </widget>
-       </item>
-       <item>
-        <widget class="QLabel" name="time">
-         <property name="text">
-          <string/>
-         </property>
-        </widget>
-       </item>
-       <item>
-        <widget class="QLabel" name="picture">
-         <property name="text">
-          <string/>
-         </property>
-        </widget>
-       </item>
-       <item>
-        <widget class="QTextBrowser" name="about">
-         <property name="maximumSize">
-          <size>
-           <width>16777215</width>
-           <height>16777215</height>
-          </size>
-         </property>
-        </widget>
-       </item>
-       <item>
-        <widget class="QPushButton" name="order_btn">
-         <property name="text">
-          <string>Забронировать Билеты</string>
-         </property>
-        </widget>
-       </item>
-      </layout>
+     <item row="4" column="0" rowspan="2">
+      <widget class="QListWidget" name="list_of_sessions">
+       <property name="minimumSize">
+        <size>
+         <width>20</width>
+         <height>450</height>
+        </size>
+       </property>
+       <property name="maximumSize">
+        <size>
+         <width>400</width>
+         <height>16777215</height>
+        </size>
+       </property>
+      </widget>
+     </item>
+     <item row="1" column="1" rowspan="5">
+      <widget class="Line" name="line">
+       <property name="orientation">
+        <enum>Qt::Vertical</enum>
+       </property>
+      </widget>
+     </item>
+     <item row="1" column="0">
+      <widget class="QLabel" name="label">
+       <property name="maximumSize">
+        <size>
+         <width>16777215</width>
+         <height>26</height>
+        </size>
+       </property>
+       <property name="text">
+        <string>Поиск</string>
+       </property>
+       <property name="indent">
+        <number>3</number>
+       </property>
+      </widget>
      </item>
      <item row="0" column="2">
       <widget class="QLabel" name="user_name">
@@ -105,72 +103,103 @@
        </property>
       </widget>
      </item>
-     <item row="2" column="0">
-      <widget class="QLineEdit" name="search_l">
-       <property name="maximumSize">
-        <size>
-         <width>400</width>
-         <height>16777215</height>
-        </size>
-       </property>
-      </widget>
+     <item row="3" column="0">
+      <widget class="QDateEdit" name="dateEdit"/>
      </item>
-     <item row="4" column="0">
-      <widget class="QPushButton" name="search_btn">
-       <property name="text">
-        <string>Найти</string>
-       </property>
-      </widget>
-     </item>
-     <item row="1" column="0">
-      <widget class="QLabel" name="label">
-       <property name="maximumSize">
-        <size>
-         <width>16777215</width>
-         <height>26</height>
-        </size>
-       </property>
-       <property name="text">
-        <string>Поиск</string>
-       </property>
-       <property name="indent">
-        <number>3</number>
-       </property>
-      </widget>
-     </item>
-     <item row="5" column="0" rowspan="2">
-      <widget class="QListWidget" name="list_of_sessions">
-       <property name="minimumSize">
-        <size>
-         <width>20</width>
-         <height>450</height>
-        </size>
-       </property>
-       <property name="maximumSize">
-        <size>
-         <width>400</width>
-         <height>16777215</height>
-        </size>
-       </property>
-      </widget>
-     </item>
-     <item row="1" column="1" rowspan="6">
-      <widget class="Line" name="line">
-       <property name="orientation">
-        <enum>Qt::Vertical</enum>
-       </property>
-      </widget>
+     <item row="1" column="2" rowspan="5">
+      <layout class="QVBoxLayout" name="verticalLayout">
+       <item>
+        <widget class="QLabel" name="session_name">
+         <property name="font">
+          <font>
+           <family>Nirmala UI</family>
+           <pointsize>12</pointsize>
+          </font>
+         </property>
+         <property name="text">
+          <string>Выберите сеанс</string>
+         </property>
+        </widget>
+       </item>
+       <item>
+        <widget class="QLabel" name="time">
+         <property name="text">
+          <string/>
+         </property>
+        </widget>
+       </item>
+       <item>
+        <widget class="QLabel" name="hall">
+         <property name="text">
+          <string/>
+         </property>
+        </widget>
+       </item>
+       <item>
+        <widget class="QLabel" name="picture">
+         <property name="text">
+          <string/>
+         </property>
+        </widget>
+       </item>
+       <item>
+        <widget class="QTextBrowser" name="about">
+         <property name="maximumSize">
+          <size>
+           <width>16777215</width>
+           <height>16777215</height>
+          </size>
+         </property>
+        </widget>
+       </item>
+       <item>
+        <widget class="QPushButton" name="order_btn">
+         <property name="enabled">
+          <bool>false</bool>
+         </property>
+         <property name="text">
+          <string>Забронировать Билеты</string>
+         </property>
+        </widget>
+       </item>
+      </layout>
      </item>
     </layout>
    </widget>
   </widget>
   <widget class="QStatusBar" name="statusbar"/>
+  <widget class="QMenuBar" name="menuBar">
+   <property name="geometry">
+    <rect>
+     <x>0</x>
+     <y>0</y>
+     <width>1081</width>
+     <height>26</height>
+    </rect>
+   </property>
+   <widget class="QMenu" name="menu">
+    <property name="title">
+     <string>Меню</string>
+    </property>
+    <addaction name="exit_action"/>
+   </widget>
+   <addaction name="menu"/>
+  </widget>
   <action name="action">
    <property name="checkable">
     <bool>false</bool>
    </property>
    <property name="text">
     <string>О программе</string>
+   </property>
+  </action>
+  <action name="exit_action">
+   <property name="icon">
+    <iconset>
+     <normaloff>../../../Downloads/icons8-открыть-панель-96.png</normaloff>../../../Downloads/icons8-открыть-панель-96.png</iconset>
+   </property>
+   <property name="text">
+    <string>Выйти из профиля</string>
    </property>
   </action>
  </widget>
