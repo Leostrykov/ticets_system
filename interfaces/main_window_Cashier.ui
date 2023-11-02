@@ -13,6 +13,11 @@
   <property name="windowTitle">
    <string>Билетная система</string>
   </property>
+  <property name="styleSheet">
+   <string notr="true">font: 9pt &quot;Arial&quot;;
+margin: 5;
+background-color: white;</string>
+  </property>
   <widget class="QWidget" name="centralwidget">
    <widget class="QWidget" name="gridLayoutWidget">
     <property name="geometry">
@@ -32,6 +37,10 @@
          <height>16777215</height>
         </size>
        </property>
+       <property name="styleSheet">
+        <string notr="true">border-radius: 6px;
+border: 1px solid rgb(226, 226, 226)</string>
+       </property>
       </widget>
      </item>
      <item row="4" column="0" rowspan="2">
@@ -47,6 +56,10 @@
          <width>400</width>
          <height>16777215</height>
         </size>
+       </property>
+       <property name="styleSheet">
+        <string notr="true">border-radius: 5px;
+border: 1px solid rgb(213, 213, 213);</string>
        </property>
       </widget>
      </item>
@@ -83,9 +96,10 @@
        </property>
        <property name="font">
         <font>
-         <family>Nirmala UI</family>
+         <family>Arial</family>
          <pointsize>9</pointsize>
          <weight>50</weight>
+         <italic>false</italic>
          <bold>false</bold>
         </font>
        </property>
@@ -104,7 +118,12 @@
       </widget>
      </item>
      <item row="3" column="0">
-      <widget class="QDateEdit" name="dateEdit"/>
+      <widget class="QDateEdit" name="dateEdit">
+       <property name="styleSheet">
+        <string notr="true">border-radius: 5px;
+border: 1px solid rgb(227, 227, 227)</string>
+       </property>
+      </widget>
      </item>
      <item row="1" column="2" rowspan="5">
       <layout class="QVBoxLayout" name="verticalLayout">
@@ -112,8 +131,11 @@
         <widget class="QLabel" name="session_name">
          <property name="font">
           <font>
-           <family>Nirmala UI</family>
-           <pointsize>12</pointsize>
+           <family>Arial</family>
+           <pointsize>9</pointsize>
+           <weight>50</weight>
+           <italic>false</italic>
+           <bold>false</bold>
           </font>
          </property>
          <property name="text">
@@ -157,6 +179,14 @@
          <property name="enabled">
           <bool>false</bool>
          </property>
+         <property name="styleSheet">
+          <string notr="true">QPushButton {
+	background-color: #ff3118;
+	border-radius: 10px;
+	color: white;
+	padding: 5px;
+}</string>
+         </property>
          <property name="text">
           <string>Забронировать Билеты</string>
          </property>
@@ -174,7 +204,7 @@
      <x>0</x>
      <y>0</y>
      <width>1081</width>
-     <height>26</height>
+     <height>33</height>
     </rect>
    </property>
    <widget class="QMenu" name="menu">
@@ -196,7 +226,7 @@
   <action name="exit_action">
    <property name="icon">
     <iconset>
-     <normaloff>../../../Downloads/icons8-открыть-панель-96.png</normaloff>../../../Downloads/icons8-открыть-панель-96.png</iconset>
+     <normaloff>../icons/icons8-открыть-панель-96.png</normaloff>../icons/icons8-открыть-панель-96.png</iconset>
    </property>
    <property name="text">
     <string>Выйти из профиля</string>

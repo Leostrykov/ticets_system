@@ -19,6 +19,11 @@
   <property name="windowTitle">
    <string>Добавить фильм</string>
   </property>
+  <property name="styleSheet">
+   <string notr="true">font: 9pt &quot;Arial&quot;;
+margin: 5;
+background-color: white;</string>
+  </property>
   <widget class="QWidget" name="centralwidget">
    <widget class="QWidget" name="layoutWidget">
     <property name="geometry">
@@ -41,9 +46,16 @@
       <widget class="QLineEdit" name="film_name">
        <property name="font">
         <font>
-         <family>MS Reference Sans Serif</family>
-         <pointsize>14</pointsize>
+         <family>Arial</family>
+         <pointsize>9</pointsize>
+         <weight>50</weight>
+         <italic>false</italic>
+         <bold>false</bold>
         </font>
+       </property>
+       <property name="styleSheet">
+        <string notr="true">border-radius: 6px;
+border: 1px solid rgb(226, 226, 226)</string>
        </property>
        <property name="text">
         <string/>
@@ -69,6 +81,14 @@
        <property name="enabled">
         <bool>true</bool>
        </property>
+       <property name="styleSheet">
+        <string notr="true">QPushButton {
+	background-color: rgb(221, 221, 221);
+	border-radius: 10px;
+	color: black;
+	padding: 5px;
+}</string>
+       </property>
        <property name="text">
         <string>Загрузить изображение</string>
        </property>
@@ -82,12 +102,25 @@
       </widget>
      </item>
      <item>
-      <widget class="QPlainTextEdit" name="about_of_film"/>
+      <widget class="QPlainTextEdit" name="about_of_film">
+       <property name="styleSheet">
+        <string notr="true">border-radius: 6px;
+border: 1px solid rgb(226, 226, 226)</string>
+       </property>
+      </widget>
      </item>
      <item>
       <widget class="QPushButton" name="add_btn">
        <property name="enabled">
         <bool>true</bool>
+       </property>
+       <property name="styleSheet">
+        <string notr="true">QPushButton {
+	background-color: #ff3118;
+	border-radius: 10px;
+	color: white;
+	padding: 5px;
+}</string>
        </property>
        <property name="text">
         <string>Добавить</string>

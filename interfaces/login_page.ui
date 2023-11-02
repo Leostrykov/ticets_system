@@ -13,13 +13,18 @@
   <property name="windowTitle">
    <string>Войти в систему</string>
   </property>
+  <property name="styleSheet">
+   <string notr="true">font: 9pt &quot;Arial&quot;;
+margin: 5;
+background-color: white;</string>
+  </property>
   <widget class="QWidget" name="centralwidget">
    <widget class="QLabel" name="label">
     <property name="geometry">
      <rect>
-      <x>140</x>
+      <x>130</x>
       <y>50</y>
-      <width>171</width>
+      <width>181</width>
       <height>41</height>
      </rect>
     </property>
@@ -33,7 +38,7 @@
       <x>120</x>
       <y>110</y>
       <width>221</width>
-      <height>71</height>
+      <height>73</height>
      </rect>
     </property>
     <layout class="QFormLayout" name="formLayout">
@@ -52,10 +57,20 @@
       </widget>
      </item>
      <item row="0" column="1">
-      <widget class="QLineEdit" name="login"/>
+      <widget class="QLineEdit" name="login">
+       <property name="styleSheet">
+        <string notr="true">border-radius: 10px;
+border: 1px solid rgb(226, 226, 226)</string>
+       </property>
+      </widget>
      </item>
      <item row="1" column="1">
-      <widget class="QLineEdit" name="password"/>
+      <widget class="QLineEdit" name="password">
+       <property name="styleSheet">
+        <string notr="true">border-radius: 10px;
+border: 1px solid rgb(226, 226, 226)</string>
+       </property>
+      </widget>
      </item>
     </layout>
    </widget>
@@ -64,9 +79,17 @@
      <rect>
       <x>250</x>
       <y>190</y>
-      <width>93</width>
-      <height>28</height>
+      <width>91</width>
+      <height>31</height>
      </rect>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">QPushButton {
+	background-color: #ff3118;
+	border-radius: 10px;
+	color: white;
+	padding: 5px;
+}</string>
     </property>
     <property name="text">
      <string>Войти</string>

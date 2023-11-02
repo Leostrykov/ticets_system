@@ -134,7 +134,7 @@ class AddSession(QMainWindow):
     WHERE (DATETIME('%s') BETWEEN DATETIME(datetime_start) AND DATETIME(datetime_end)) OR 
     (DATETIME('%s') BETWEEN DATETIME(datetime_start) AND DATETIME(datetime_end)) AND hall_id = %s;''' %
                        (datetime_start, datetime_end, hall[0])).fetchone() is None:
-            seats = [['*' for _ in range(hall[3])] for _ in range(hall[2])]
+            seats = [['F' for _ in range(hall[3])] for _ in range(hall[2])]
             cur.execute('''INSERT INTO sessions_in_cinema(session_id, datetime_start, datetime_end, duration, 
             hall_id, seats)
             VALUES (%s, '%s', '%s', %s, %s, '%s');''' % (film, datetime_start,

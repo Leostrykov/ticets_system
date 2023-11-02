@@ -4,6 +4,7 @@ from PyQt5.QtWidgets import QApplication, QMainWindow, QMessageBox
 from PyQt5.QtGui import QPixmap
 from PyQt5.QtCore import QDate
 from add_sesion import AddSession
+from hall_sheme import CinemaLayout
 import sqlite3
 
 db = sqlite3.connect('ticets_db.sqlite3')
@@ -44,8 +45,6 @@ class LoginPage(QMainWindow):
 class MainWindow(QMainWindow):
     def __init__(self, info_user):
         super().__init__()
-        self.sesion_add_form = None
-        self.log_window = None
         self.is_admin = False
         self.session_id = None
 
@@ -70,6 +69,7 @@ class MainWindow(QMainWindow):
         self.interface()
         self.dateEdit.dateChanged.connect(self.changetDate)
         self.exit_action.triggered.connect(self.exit_from_account)
+        self.order_btn.clicked.connect(self.order)
 
     def interface(self):
         # загружаем сеансы
@@ -150,6 +150,10 @@ class MainWindow(QMainWindow):
             db.commit()
             self.interface()
             self.interface()
+
+    def order(self):
+        self.sheme_form = CinemaLayout(self.session_id)
+        self.sheme_form.show()
 
 
 def except_hook(cls, exception, traceback):

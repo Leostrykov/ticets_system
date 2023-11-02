@@ -19,6 +19,11 @@
   <property name="windowTitle">
    <string>Создать сеанс</string>
   </property>
+  <property name="styleSheet">
+   <string notr="true">font: 9pt &quot;Arial&quot;;
+margin: 5;
+background-color: white;</string>
+  </property>
   <widget class="QWidget" name="centralwidget">
    <widget class="QTabWidget" name="tabWidget">
     <property name="geometry">
@@ -60,7 +65,12 @@
         </widget>
        </item>
        <item row="0" column="1">
-        <widget class="QComboBox" name="films"/>
+        <widget class="QComboBox" name="films">
+         <property name="styleSheet">
+          <string notr="true">border-radius: 6px;
+border: 1px solid rgb(226, 226, 226)</string>
+         </property>
+        </widget>
        </item>
        <item row="1" column="0">
         <widget class="QLabel" name="label_2">
@@ -70,7 +80,12 @@
         </widget>
        </item>
        <item row="1" column="1">
-        <widget class="QDateTimeEdit" name="dateTime_startted"/>
+        <widget class="QDateTimeEdit" name="dateTime_startted">
+         <property name="styleSheet">
+          <string notr="true">border-radius: 6px;
+border: 1px solid rgb(226, 226, 226)</string>
+         </property>
+        </widget>
        </item>
        <item row="2" column="0">
         <widget class="QLabel" name="label_3">
@@ -80,7 +95,12 @@
         </widget>
        </item>
        <item row="2" column="1">
-        <widget class="QComboBox" name="halls"/>
+        <widget class="QComboBox" name="halls">
+         <property name="styleSheet">
+          <string notr="true">border-radius: 6px;
+border: 1px solid rgb(226, 226, 226)</string>
+         </property>
+        </widget>
        </item>
        <item row="3" column="0">
         <widget class="QLabel" name="label_4">
@@ -91,6 +111,10 @@
        </item>
        <item row="3" column="1">
         <widget class="QSpinBox" name="duration_session">
+         <property name="styleSheet">
+          <string notr="true">border-radius: 6px;
+border: 1px solid rgb(226, 226, 226)</string>
+         </property>
          <property name="minimum">
           <number>1</number>
          </property>
@@ -101,6 +125,14 @@
        </item>
        <item row="4" column="1">
         <widget class="QPushButton" name="create_session_btn">
+         <property name="styleSheet">
+          <string notr="true">QPushButton {
+	background-color: #ff3118;
+	border-radius: 10px;
+	color: white;
+	padding: 5px;
+}</string>
+         </property>
          <property name="text">
           <string>Создать</string>
          </property>
@@ -140,6 +172,10 @@
            <height>16777215</height>
           </size>
          </property>
+         <property name="styleSheet">
+          <string notr="true">border-radius: 6px;
+border: 1px solid rgb(226, 226, 226)</string>
+         </property>
         </widget>
        </item>
        <item row="0" column="0">
@@ -171,9 +207,18 @@
           <widget class="QLineEdit" name="film_name">
            <property name="font">
             <font>
-             <family>MS Reference Sans Serif</family>
-             <pointsize>14</pointsize>
+             <family>Arial</family>
+             <pointsize>15</pointsize>
+             <weight>9</weight>
+             <italic>false</italic>
+             <bold>false</bold>
             </font>
+           </property>
+           <property name="styleSheet">
+            <string notr="true">font: 75 15pt &quot;Arial&quot;;
+border-radius: 6px;
+border: 1px solid rgb(226, 226, 226)
+</string>
            </property>
            <property name="text">
             <string/>
@@ -192,13 +237,26 @@
            <property name="enabled">
             <bool>false</bool>
            </property>
+           <property name="styleSheet">
+            <string notr="true">QPushButton {
+	background-color:rgb(231, 231, 231);
+	border-radius: 10px;
+	color: black;
+	padding: 5px;
+}</string>
+           </property>
            <property name="text">
             <string>Загрузить изображение</string>
            </property>
           </widget>
          </item>
          <item>
-          <widget class="QPlainTextEdit" name="about_of_film"/>
+          <widget class="QPlainTextEdit" name="about_of_film">
+           <property name="styleSheet">
+            <string notr="true">border-radius: 6px;
+border: 1px solid rgb(226, 226, 226)</string>
+           </property>
+          </widget>
          </item>
          <item>
           <layout class="QHBoxLayout" name="horizontalLayout">
@@ -206,6 +264,14 @@
             <widget class="QPushButton" name="save_btn">
              <property name="enabled">
               <bool>false</bool>
+             </property>
+             <property name="styleSheet">
+              <string notr="true">QPushButton {
+	background-color: #ff3118;
+	border-radius: 10px;
+	color: white;
+	padding: 5px;
+}</string>
              </property>
              <property name="text">
               <string>Сохранить</string>
@@ -216,6 +282,14 @@
             <widget class="QPushButton" name="delete_btn">
              <property name="enabled">
               <bool>false</bool>
+             </property>
+             <property name="styleSheet">
+              <string notr="true">QPushButton {
+	background-color:rgb(231, 231, 231);
+	border-radius: 10px;
+	color: black;
+	padding: 5px;
+}</string>
              </property>
              <property name="text">
               <string>Удалить</string>
@@ -234,6 +308,10 @@
            <height>16777215</height>
           </size>
          </property>
+         <property name="styleSheet">
+          <string notr="true">border-radius: 6px;
+border: 1px solid rgb(226, 226, 226)</string>
+         </property>
         </widget>
        </item>
       </layout>
@@ -242,10 +320,18 @@
       <property name="geometry">
        <rect>
         <x>0</x>
-        <y>10</y>
-        <width>111</width>
-        <height>28</height>
+        <y>0</y>
+        <width>151</width>
+        <height>41</height>
        </rect>
+      </property>
+      <property name="styleSheet">
+       <string notr="true">QPushButton {
+	background-color:rgb(231, 231, 231);
+	border-radius: 10px;
+	color: black;
+	padding: 5px;
+}</string>
       </property>
       <property name="text">
        <string>Добавить фильм</string>
