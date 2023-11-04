@@ -1,11 +1,11 @@
-import sys
 from PyQt5 import uic
-from PyQt5.QtWidgets import QApplication, QMainWindow, QMessageBox
+from PyQt5.QtWidgets import QApplication, QMainWindow, QMessageBox, QFileDialog
 from PyQt5.QtGui import QPixmap
 from PyQt5.QtCore import QDate
 from add_sesion import AddSession
 from hall_sheme import CinemaLayout
 import sqlite3
+import csv
 
 db = sqlite3.connect('ticets_db.sqlite3')
 cur = db.cursor()
@@ -45,6 +45,9 @@ class LoginPage(QMainWindow):
 class MainWindow(QMainWindow):
     def __init__(self, info_user):
         super().__init__()
+        self.sheme_form = None
+        self.log_window = None
+        self.sesion_add_form = None
         self.is_admin = False
         self.session_id = None
 
@@ -70,6 +73,7 @@ class MainWindow(QMainWindow):
         self.dateEdit.dateChanged.connect(self.changetDate)
         self.exit_action.triggered.connect(self.exit_from_account)
         self.order_btn.clicked.connect(self.order)
+        self.load_tickets_btn.clicked.connect(self.load_tickets)
 
     def interface(self):
         # загружаем сеансы
@@ -94,6 +98,7 @@ class MainWindow(QMainWindow):
     def select_session(self):
         # загружаем данные о выбранном сеансе
         self.order_btn.setEnabled(True)
+        self.load_tickets_btn.setEnabled(True)
         if self.is_admin:
             self.action_delete_session.setEnabled(True)
         try:
@@ -154,6 +159,14 @@ class MainWindow(QMainWindow):
     def order(self):
         self.sheme_form = CinemaLayout(self.session_id)
         self.sheme_form.show()
+
+    def load_tickets(self):
+        link = QFileDialog.getSaveFileName(self, 'Сохранить', '', 'CSV (*.csv)')[0]
+        if len(link) > 0:
+            with open(link, 'w', newline='', encoding='utf8') as csvfile:
+                writer = csv.writer(csvfile, delimiter=',', quotechar='"', quoting=csv.QUOTE_MINIMAL)
+                writer.writerow(['id', 'session_id', 'row', 'seat'])
+                writer.writerows(cur.execute('SELECT * FROM tickets WHERE session = %s;' % self.session_id).fetchall())
 
 
 def except_hook(cls, exception, traceback):

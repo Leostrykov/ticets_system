@@ -1,13 +1,13 @@
 import sys
 from PyQt5.QtWidgets import QMainWindow, QWidget, QPushButton
-from PyQt5.QtGui import QPainter, QColor, QFont
+from PyQt5.QtGui import QPainter, QColor, QFont, QTextDocument
 from PyQt5.QtCore import Qt
+from PyQt5.QtPrintSupport import QPrinter, QPrintDialog
 import sqlite3
 import json
 import jinja2
 import qrcode
-from PyQt5.QtGui import QTextDocument
-from PyQt5.QtPrintSupport import QPrinter, QPrintDialog
+
 
 db = sqlite3.connect('ticets_db.sqlite3')
 cur = db.cursor()
@@ -99,7 +99,8 @@ class CinemaLayout(QMainWindow):
     def order(self):
         for seat in self.select_seats:
             self.seats[seat[0]][seat[1]] = 'E'
-            cur.execute('''INSERT INTO tickets (session) VALUES (%s);''' % self.session[0])
+            cur.execute('''INSERT INTO tickets (session, row, seat) VALUES (%s, %s, %s);''' % (self.session[0],
+                                                                                               seat[0], seat[1]))
             id_ticket = cur.lastrowid
             self.print_ticket(id_ticket, seat)
         cur.execute('''UPDATE sessions_in_cinema SET seats = '%s' WHERE id = %s;''' % (json.dumps(self.seats),
